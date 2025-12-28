@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -73,4 +74,11 @@ temp/
 *.pem
 .vercel
 .turbo
+=======
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+>>>>>>> a3a5847b05b1192109203bea460af9a21354df8c
 
