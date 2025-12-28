@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 # Dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
@@ -74,11 +72,3 @@ temp/
 *.pem
 .vercel
 .turbo
-=======
-node_modules/
-dist/
-.env
-*.log
-.DS_Store
->>>>>>> a3a5847b05b1192109203bea460af9a21354df8c
-
