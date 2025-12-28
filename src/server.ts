@@ -1,44 +1,19 @@
-import express, { Application, Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import itemRoutes from './routes/itemRoutes';
-import categoryRoutes from './routes/categoryRoutes';
+import inventoryRoutes from './routes/inventory';
 
-// Load environment variables
-dotenv.config();
+const app = express();
+const PORT = 5000;
 
-const app: Application = express();
-const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/inventory-management';
-
-// Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/api/items', itemRoutes);
-app.use('/api/categories', categoryRoutes);
-
-// Health check endpoint
-app.get('/api/health', (req: Request, res: Response) => {
-  res.json({ status: 'OK', message: 'Server is running' });
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK' });
 });
 
-// Connect to MongoDB
-mongoose
-  .connect(MONGODB_URI)
-  .then(() => {
-    console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.error('MongoDB connection error:', error);
-    process.exit(1);
-  });
+app.use('/api/inventory', inventoryRoutes);
 
-export default app;
-
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
