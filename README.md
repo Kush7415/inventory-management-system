@@ -2,6 +2,11 @@
 
 A full-stack inventory management application built with Next.js and Express.js, designed for managing inventory items with real-time search, filtering, and status tracking.
 
+## 🚀 Live Demo
+
+- **Frontend**: [https://inventory-management-system-sandy-five.vercel.app/](https://inventory-management-system-sandy-five.vercel.app/)
+- **Backend API**: [https://inventory-backend-kje1.onrender.com](https://inventory-backend-kje1.onrender.com)
+
 ## 🚀 Features
 
 - **Inventory Management**
@@ -155,6 +160,31 @@ cd frontend
 npm run build
 npm start
 ```
+
+## ☁️ Deployment
+
+This application is deployed on two platforms:
+
+### Frontend - Vercel
+- **Platform**: [Vercel](https://vercel.com)
+- **URL**: [https://inventory-management-system-sandy-five.vercel.app/](https://inventory-management-system-sandy-five.vercel.app/)
+- **Deployment**: Automatic deployment on push to main branch
+- **Features**: 
+  - Fast global CDN
+  - Automatic HTTPS
+  - Serverless functions support
+
+### Backend - Render
+- **Platform**: [Render](https://render.com)
+- **URL**: [https://inventory-backend-kje1.onrender.com](https://inventory-backend-kje1.onrender.com)
+- **Deployment**: Automatic deployment on push to main branch
+- **Note**: ⚠️ **First load may take 30-60 seconds** as the free tier backend wakes from sleep mode. Subsequent requests will be faster.
+
+### Deployment Notes
+- Both services are connected to the GitHub repository for automatic deployments
+- Environment variables are configured in each platform's dashboard
+- The frontend is configured to connect to the Render backend URL
+- Free tier limitations apply (backend sleep after inactivity, rate limits)
 
 ## 📡 API Endpoints
 
